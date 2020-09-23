@@ -1,0 +1,28 @@
+/*
+ * @Author: xyh 
+ * @Date: 2020-09-22 00:30:30 
+ * @Last Modified by: xyh
+ * @Last Modified time: 2020-09-23 17:56:24
+ */
+
+.page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(116, 185, 255,1.0);
+  // z-index: 999;
+  animation: myOpacity 2.5s;
+}
+@keyframes myOpacity{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}

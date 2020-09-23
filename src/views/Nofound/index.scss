@@ -1,0 +1,32 @@
+/*
+ * @Author: xyh 
+ * @Date: 2020-09-22 00:30:23 
+ * @Last Modified by:   xyh 
+ * @Last Modified time: 2020-09-22 00:30:23 
+ */
+
+.no-found{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(116, 185, 255,1.0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  img {
+    border-radius: 5px;
+    padding-bottom: 30px;
+  }
+  .text{
+    // background-color: red;
+    span{
+      color: #000;
+    }
+    a {
+      color: rgba(255,0,0,1);
+    }
+  }
+}
