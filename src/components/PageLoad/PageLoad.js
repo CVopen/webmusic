@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-20 18:29:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-23 20:58:10
+ * @Last Modified time: 2020-09-24 23:41:04
  */
 import React, { Component } from 'react';
 import './PageLoad.scss'
@@ -14,7 +14,7 @@ class PageLoad extends Component {
   render() {
     return (
       <div className="page op">
-        <img src={require("../../assets/images/loading.gif")} alt="loading图片"/>
+        <img src={require("../../assets/images/logo.svg")} alt="loading图片"/>
         <div>正在加载中&nbsp;&nbsp;请稍等....</div>
       </div>
     )

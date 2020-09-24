@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:54:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-23 17:56:40
+ * @Last Modified time: 2020-09-24 23:32:04
  */
 
 import React from 'react';
@@ -29,7 +29,7 @@ class App extends React.Component {
       this.setState({
         isShow: false
       })
-    }, 2500);
+    }, 3500);
     return (
       <Provider store={store}>
         {this.state.isShow ? (<PageLoad />) : null}

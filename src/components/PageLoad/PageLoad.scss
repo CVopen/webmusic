@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-22 00:30:30 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-23 20:56:53
+ * @Last Modified time: 2020-09-24 23:45:38
  */
 
 .page {
@@ -14,8 +14,8 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: $background-color;
-  animation: myOpacity 2.5s;
+  background-color: rgba(0, 0, 0, .9);
+  animation: myOpacity 3.5s;
   display: flex;
   flex-direction: column;
   div {
@@ -23,12 +23,28 @@
     color: #fff;
     font-size: 22px;
   }
+  img {
+    width: 200px;
+    height: 200px;
+    animation: logo infinite 20s;
+  }
 }
 @keyframes myOpacity{
   0%{
     opacity: 1;
   }
+  30%{
+    opacity: 1;
+  }
   100%{
-    opacity: 0;
+    opacity: 0.2;
+  }
+}
+@keyframes logo {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
