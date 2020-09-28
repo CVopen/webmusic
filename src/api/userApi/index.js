@@ -7,24 +7,23 @@
 
 import request from '../../utils/request'
 
-const userApi = {
+
   // 手机登录
-  cellphone: (data) => {
+export function cellphone (data) {
     return request({
       url: '/login/cellphone',
       method: 'post',
       data
     })
-  },
+  }
   // 邮箱登录
-  emailLogin: (data) => {
+export function emailLogin(data) {
     return request({
       url: '/login',
       method: 'post',
       data
     })
   }
-}
 
 
 // 刷新登录
@@ -37,4 +36,4 @@ const userApi = {
 
 // 检测手机号码是否已注册
 
-export default userApi
+// export default userApi
