@@ -2,7 +2,7 @@
  * @Author: zmx 
  * @Date: 2020-09-27 09:33:22 
  * @Last Modified by: zmx
- * @Last Modified time: 2020-09-27 17:15:52
+ * @Last Modified time: 2020-09-28 20:41:46
  */
 
 import React, { Component } from 'react'
@@ -10,19 +10,18 @@ import './LoginTop.scss'
 import { cellphone } from '../../api/userApi/index'
 import { MailOutlined } from '@ant-design/icons';
 import { withRouter }  from 'react-router-dom'
-import { message } from 'antd'
  class LoginTop extends Component {
     constructor(props){
         super(props)
         this.state = {
             username: '',
             password:'',
-            result:null
+            isShow: false,
+            isSuccess: null,
+            text: ''
         }
     }
-    showMessage = (type,data) => {
-        type ? message.success(data): message.error(data)
-    }
+    
     change = (e) => {
         switch (e.target.dataset.input) {
             case "user":
@@ -40,27 +39,49 @@ import { message } from 'antd'
         }
     }
     clickHandler=()=>{
-        
+        if (this.state.username === '' || this.state.password === '') return
+        // 没有值就return了
         cellphone({
             phone:this.state.username,
             password:this.state.password
         }).then(res=>{
-            console.log(res)
             this.setState({
-                result:res
-            })
-            console.log(this.state.result)
-            this.showMessage(true, '成功')
+                text: '登陆成功',
+                isShow: true
+            }, ()=>{
+                    setTimeout(()=>{
+                        this.setState({
+                            isShow:false
+                        })
+                        this.props.history.push('/')
+                    },2000)
+                }
+            
+            )
+            
         }).catch (err => {
-            console.log(err)
-            this.showMessage(false, '失败')
+            this.setState({
+                text: '登陆失败',
+                isShow: true
+            },()=>{
+                setTimeout(()=>{
+                    this.setState({
+                        isShow:false
+                    })
+                },2000)
+            })
         }) 
+       
+            
     }
+    
     emailLogin=()=>{
         this.props.history.push('/emailLogin')
     }
     
     render() {
+        // const {result} = this.state.result
+        // 在render的时候  this.state.result = null下面就报错了 
         return (
             <div className="container">
                 <div className="logo">
@@ -90,7 +111,15 @@ import { message } from 'antd'
                 <div className="registerBtn">
                     没有账号?请注册
                 </div>
-
+                <div className={"message "+ (this.state.isShow? "show":"")}>
+                    {/* {result.status===200?"登陆成功":"登陆失败"} */}
+                    {/* {
+                        this.state.isSuccess? <span>登陆成功</span> : <span>登陆失败</span>
+                    } */}
+                    {this.state.text}
+                    {/* 登陆成功 */}
+                </div>
+                
             </div>
 
         )
