@@ -5,6 +5,7 @@
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 999;
   .header {
     width: 1200px;
     margin: 0 auto;
@@ -102,6 +103,7 @@
           font-size: $min-font;
           line-height: 50px;
           transition: all .8s;
+          list-style: none;
           &:hover {
             color: $color-hover;
             background-color: $theme-color;

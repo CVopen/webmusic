@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:54:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-26 00:51:54
+ * @Last Modified time: 2020-09-28 16:04:15
  */
 
 import React from 'react';
@@ -29,6 +29,7 @@ class App extends React.Component {
       this.setState({
         isShow: false
       })
+      document.body.style.overflow = ''
     }, 3500);
     return (
       <Provider store={store}>
