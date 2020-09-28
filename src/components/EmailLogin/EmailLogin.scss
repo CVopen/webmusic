@@ -1,0 +1,125 @@
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right,#ff9569 0%,#e92758 100%);
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    .logo {
+        width: 160px;
+        height: 160px;
+        img {
+            width: 100%;
+            height: 100%;
+            animation: logo infinite 10s linear;
+        }
+    }
+    @keyframes logo {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    .content {
+        background-image: linear-gradient(45deg,#ff9a9e 0%,#fad0c4 99%,#fad0c4 100%);
+        
+        border-radius: 10px;
+    }
+    .login{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 500px;
+        height: 100px;
+        .user{
+            width: 300px;
+            height: 30px;
+            padding: 2px 5px;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            // margin-top: 60px;
+            border-bottom: 2px solid #fff;
+            font-size: 15px;
+            color: rgb(214, 149, 149);
+            font-weight: 500;
+            margin-left: 10px;
+            // margin-left: 76px;
+        }
+        .text{
+            // position: absolute;
+            // top: 60px;
+            // left: 140px;
+            // transition: all .5s;
+            display: block;
+            // width: 15px;
+            font-size: 18px;
+            color:#ff7675;
+            font-weight: 700;
+            font-weight: 400;
+            text-align: center;
+        }
+        .underline{
+            position: absolute;
+            top: 62px;
+            left: 123px;
+            display: block;
+            width: 301px;
+            height: 3px;
+            transform: scaleX(0);
+            transition: all .3s ease-in;
+        }
+        
+        .user:focus ~ .underline{
+            transform: scaleX(1);
+            background-color: rgb(136,61,136);
+            transform-origin: center center;
+        }
+    }
+    .loginBtn{
+        // padding: 5px 10px;
+        margin-top: 50px;
+    //    margin-left: -80px;
+       width: 328px;
+       height: 44px;
+       text-align: center;
+       line-height: 44px;
+       border-radius: 14px;
+       color: #7158e2;
+       background: linear-gradient(120deg,#ffe29f,#ffa99f,#ffe29f);
+       transition: .9s;
+       background-size: 300%;
+    }
+    .loginBtn:hover{
+        cursor: pointer;
+        background-position: right;
+        // transform: scaleY(-15px);
+    }
+    .registerBtn{
+        position: relative;
+        right: -180px;
+        margin-top: 100px;
+    }
+    .registerBtn:hover{
+        cursor: pointer;
+    }
+    .emailLogin{
+        font-size: 14px;
+        width: 130px;
+        height: 40px;
+        margin-right: -270px;
+        color: #3ae374;
+        .icon{
+            margin-right: 7px;
+        }
+    }
+    .emailLogin:hover{
+        cursor: pointer;
+    }
+}
