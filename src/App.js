@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:54:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-28 16:04:15
+ * @Last Modified time: 2020-09-28 20:56:37
  */
 
 import React from 'react';
@@ -29,11 +29,11 @@ class App extends React.Component {
       this.setState({
         isShow: false
       })
-      document.body.style.overflow = ''
+      document.body.style.overflow = 'auto'
     }, 3500);
     return (
       <Provider store={store}>
-        {/* {this.state.isShow ? (<PageLoad />) : null} */}
+        {this.state.isShow ? (<PageLoad />) : null}
         <Router>
             <RouterView routes={config }/>
         </Router>

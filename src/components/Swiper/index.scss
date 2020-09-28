@@ -1,0 +1,34 @@
+ul {
+  // height: 500px;
+  width: 6000px;
+  display: flex;
+  li {
+    width: 100%;
+    height: 500px;
+    transition: all 1.5s;
+  }
+  & :nth-child(1) {
+    background-color: red;
+    transform: translateX(0);
+  }
+  & :nth-child(2) {
+    background-color: yellow;
+    transform: translateX(0%);
+    // transform: translateX(100%);
+  }
+  & :nth-child(3) {
+    background-color: blue;
+    transform: translateX(0%);
+    // transform: translateX(200%);
+  }
+  & :nth-child(4) {
+    background-color: skyblue;
+    transform: translateX(0%);
+    // transform: translateX(300%);
+  }
+  & :nth-child(5) {
+    background-color: hotpink;
+    transform: translateX(0%);
+    // transform: translateX(400%);
+  }
+}

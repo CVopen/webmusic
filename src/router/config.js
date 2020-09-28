@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:50:43 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-28 15:59:31
+ * @Last Modified time: 2020-09-28 17:38:06
  */
 // 首页路由
 import Home from '../views/Home/index'
@@ -50,6 +50,10 @@ const routes = [
       {
         path: '/index',
         redirect: '/index/discover'
+      },
+      {
+        path: '*',
+        component: Nofound
       }
     ]
   },
