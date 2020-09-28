@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:53:15 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-22 00:09:41
+ * @Last Modified time: 2020-09-28 15:50:32
  */
 
 import React from 'react'
@@ -32,7 +32,7 @@ class RouterView extends React.Component {
                       />
             } else if (item.redirect) {
               return (
-                  <Route exact key={index} path="/">
+                  <Route exact key={index} path={item.path}>
                     <Redirect to={item.redirect}/>
                   </Route>
                 )
