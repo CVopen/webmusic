@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-28 16:10:50 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-07 18:57:57
+ * @Last Modified time: 2020-10-07 20:50:53
  */
 import React, { Component } from 'react'
 import './index.scss'
@@ -71,19 +71,24 @@ export default class index extends Component {
   }
   getBannerData = async () => {
     const { data } = await homeBanner()
-    console.log(data.banners);
     let img = new Image()
     img.src = data.banners[0].imageUrl
-    this.setState({
-      list: data.banners,
-      height: 1200 * img.height / img.width,
-      width: data.banners.length * 40
-    })
+    // 图片加载成功后
+    img.onload = () => {
+      this.setState({
+        list: data.banners,
+        height: 1200 * img.height / img.width,
+        width: data.banners.length * 40
+      })
+    }
     
     this.swiperAnimetion()
   }
   componentDidMount () {
     this.getBannerData()
+  }
+  componentWillUnmount () {
+    clearInterval(this.timer)
   }
   render() {
     return (
