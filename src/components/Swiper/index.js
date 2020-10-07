@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-28 16:10:50 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-07 20:50:53
+ * @Last Modified time: 2020-10-07 23:17:12
  */
 import React, { Component } from 'react'
 import './index.scss'
@@ -12,7 +12,6 @@ export default class index extends Component {
 
   constructor(props) {
     super(props)
-    this.myRef = React.createRef()
     this.state = {
       count: 0,
       list: [],
@@ -93,7 +92,8 @@ export default class index extends Component {
   render() {
     return (
       <div className="swiper" style={{height: this.state.height}}>
-        <ul ref={this.myRef} className="banner" style={{height: this.state.height}}>
+        <ul className="banner" style={{height: this.state.height}} 
+        onClick={this.handleClick} >
           {
             this.state.list.map((item,index) => (
               <li 
@@ -102,7 +102,6 @@ export default class index extends Component {
               >
                 <img 
                   src={item.imageUrl} 
-                  onClick={this.handleClick} 
                   alt=""
                   data-id={item.encodeId}
                 />

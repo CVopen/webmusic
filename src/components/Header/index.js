@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-25 13:18:30 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-28 16:08:09
+ * @Last Modified time: 2020-10-07 23:13:42
  */
 import React, { Component } from 'react'
 import './index.scss'
@@ -38,14 +38,14 @@ export default class Header extends Component {
             <Col span={2}>
               <div className="find_music">
                 <div className="text">发现音乐</div>
-                <div className="ul_list">
-                  <li data-path="discover" onClick={this.toPath} >推荐</li>
-                  <li data-path="toplist" onClick={this.toPath} >排行榜</li>
-                  <li data-path="playlist" onClick={this.toPath} >歌单</li>
-                  <li data-path="djradio" onClick={this.toPath} >主播电台</li>
-                  <li data-path="artist" onClick={this.toPath} >歌手</li>
-                  <li data-path="album" onClick={this.toPath} >新碟上架</li>
-                </div>
+                <ul className="ul_list" onClick={this.toPath}>
+                  <li data-path="discover">推荐</li>
+                  <li data-path="toplist">排行榜</li>
+                  <li data-path="playlist">歌单</li>
+                  <li data-path="djradio">主播电台</li>
+                  <li data-path="artist">歌手</li>
+                  <li data-path="album">新碟上架</li>
+                </ul>
               </div>
             </Col>
             <Col span={2}>
