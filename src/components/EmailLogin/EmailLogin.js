@@ -1,8 +1,8 @@
 /*
  * @Author: zmx 
  * @Date: 2020-09-27 09:33:22 
- * @Last Modified by: zmx
- * @Last Modified time: 2020-09-27 14:51:36
+ * @Last Modified by: xyh
+ * @Last Modified time: 2020-10-07 18:45:44
  */
 
 import React, { Component } from 'react'
@@ -58,13 +58,13 @@ import './EmailLogin.scss'
                 </div>
                 <div className="content">
                     <div className="login">
-                        <label className='text'>邮箱</label>
+                        <label className='text'>邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
                         <input type="text" data-input="user" onChange={this.change} className="user" placeholder={this.props.username} />
                         <label className='underline'></label>
 
                     </div>
                     <div className="login">
-                        <label className='text'>密码</label>
+                        <label className='text'>密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
                         <input type="password" data-input="pass" onChange={this.change} className="user" placeholder={this.props.password} />
                         <label className='underline'></label>
 

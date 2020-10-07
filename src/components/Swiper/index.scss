@@ -1,34 +1,76 @@
-ul {
-  // height: 500px;
-  width: 6000px;
+.swiper {
+  width: 1200px;
+  position: relative;
+}
+.banner {
+  height: 400px;
+  width: 1200px;
   display: flex;
+  position: relative;
   li {
-    width: 100%;
-    height: 500px;
-    transition: all 1.5s;
+    width: 1200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+    transition: all 1.8s;
+    img {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
   }
-  & :nth-child(1) {
-    background-color: red;
-    transform: translateX(0);
+}
+.circle {
+  height: 40px;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 0;
+  li{
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      // display: block;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      border: 1px solid #eee;
+      background-color: rgba(204, 204, 204,.8);
+      border-radius: 50%;
+    }
   }
-  & :nth-child(2) {
-    background-color: yellow;
-    transform: translateX(0%);
-    // transform: translateX(100%);
+  
+  .checkCircle {
+    background-color: $theme-color;
   }
-  & :nth-child(3) {
-    background-color: blue;
-    transform: translateX(0%);
-    // transform: translateX(200%);
-  }
-  & :nth-child(4) {
-    background-color: skyblue;
-    transform: translateX(0%);
-    // transform: translateX(300%);
-  }
-  & :nth-child(5) {
-    background-color: hotpink;
-    transform: translateX(0%);
-    // transform: translateX(400%);
+}
+.btn{
+  width: 96%;
+  margin: 0 2% 0 2%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: 0;
+  div {
+    z-index: 2;
+    width: 100px;
+    height: 100%;
+    transition: all .8s;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    & :hover {
+      background-color: rgba(0, 0, 0,.2);
+    }
   }
 }

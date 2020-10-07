@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:54:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-28 20:56:37
+ * @Last Modified time: 2020-10-07 18:49:16
  */
 
 import React from 'react';
@@ -23,14 +23,18 @@ class App extends React.Component {
       isShow: true
     }
   }
-
-  render () {
+  setAnimation = () => {
     setTimeout(() => {
       this.setState({
         isShow: false
       })
       document.body.style.overflow = 'auto'
     }, 3500);
+  }
+  componentDidMount () {
+    this.setAnimation()
+  }
+  render () {
     return (
       <Provider store={store}>
         {this.state.isShow ? (<PageLoad />) : null}
