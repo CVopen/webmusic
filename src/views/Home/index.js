@@ -9,13 +9,13 @@ import React, { Component } from 'react'
 import Headers from '../../components/Header/index'
 import { Switch } from 'react-router-dom'
 import RouterView from '../../router/index'
-import './index.scss'
+import style from  './index.module.scss'
 export default class index extends Component {
   render() {
     return (
       <div>
         <Headers {...this.props} />
-        <div className="content">
+        <div className={style.content}>
           <Switch>
             <RouterView routes={ this.props.routes }/>
           </Switch>

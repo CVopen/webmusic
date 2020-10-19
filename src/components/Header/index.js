@@ -2,10 +2,10 @@
  * @Author: xyh 
  * @Date: 2020-09-25 13:18:30 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-07 23:13:42
+ * @Last Modified time: 2020-10-19 23:44:13
  */
 import React, { Component } from 'react'
-import './index.scss'
+import style from './index.module.scss'
 import { Row, Col } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
 export default class Header extends Component {
@@ -25,20 +25,20 @@ export default class Header extends Component {
   render() {
  
     return (
-      <div className="headers">
-        <div className="header">
+      <div className={style.headers}>
+        <div className={style.header}>
           <Row>
             <Col span={4}>
-              <div className="logo">
+              <div className={style.logo}>
                 <img src={require('../../assets/images/logo.svg')} alt=""/>
-                <div className="text" onClick={this.toHome}>网抑云音乐</div>
+                <div className={style.text} onClick={this.toHome}>网抑云音乐</div>
               </div>
             </Col>
             <Col span={1}></Col>
             <Col span={2}>
-              <div className="find_music">
-                <div className="text">发现音乐</div>
-                <ul className="ul_list" onClick={this.toPath}>
+              <div className={style.find_music}>
+                <div className={style.text}>发现音乐</div>
+                <ul className={style.ul_list} onClick={this.toPath}>
                   <li data-path="discover">推荐</li>
                   <li data-path="toplist">排行榜</li>
                   <li data-path="playlist">歌单</li>
@@ -49,22 +49,22 @@ export default class Header extends Component {
               </div>
             </Col>
             <Col span={2}>
-              <div className={`my_music`}>我的音乐</div>
+              <div className={style.my_music}>我的音乐</div>
             </Col>
             <Col span={2}>
-              <div className={`friend`}>我的朋友</div>
+              <div className={style.friend}>我的朋友</div>
             </Col>
             <Col span={3}></Col>
             <Col span={6}>
-              <div className="input">
-                <div className="center">
-                  <SearchOutlined className="icon" />
+              <div className={style.input}>
+                <div className={style.center}>
+                  <SearchOutlined className={style.icon} />
                   <input type="text" placeholder="音乐/视频/电台/用户" />
                 </div>
               </div>
             </Col>
             <Col span={4}>
-              <div className="avatar">
+              <div className={style.avatar}>
                 <img src={require('../../assets/images/logo.svg')} alt=""/>
               </div>
             </Col>

@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:54:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-07 23:21:38
+ * @Last Modified time: 2020-10-08 01:33:59
  */
 
 import React from 'react';
@@ -37,7 +37,7 @@ class App extends React.Component {
   render () {
     return (
       <Provider store={store}>
-        {this.state.isShow ? (<PageLoad />) : null}
+        {/* {this.state.isShow ? (<PageLoad />) : null} */}
         <Router>
             <RouterView routes={config }/>
         </Router>

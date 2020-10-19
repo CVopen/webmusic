@@ -1,6 +1,7 @@
 .swiper {
   width: 1200px;
   position: relative;
+  margin: 0 auto;
 }
 .banner {
   height: 400px;
@@ -29,7 +30,6 @@
   bottom: 0;
   transform: translateX(-50%);
   z-index: 2;
-  padding: 0;
   li{
     list-style: none;
     width: 40px;
@@ -38,7 +38,6 @@
     align-items: center;
     justify-content: center;
     span{
-      // display: block;
       width: 16px;
       height: 16px;
       cursor: pointer;

@@ -2,10 +2,10 @@
  * @Author: xyh 
  * @Date: 2020-09-28 16:10:50 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-07 23:17:12
+ * @Last Modified time: 2020-10-19 23:51:14
  */
 import React, { Component } from 'react'
-import './index.scss'
+import style from './index.module.scss'
 import {homeBanner} from '../../api/home/index'
 import { CaretLeftFilled, CaretRightFilled } from '@ant-design/icons';
 export default class index extends Component {
@@ -91,8 +91,8 @@ export default class index extends Component {
   }
   render() {
     return (
-      <div className="swiper" style={{height: this.state.height}}>
-        <ul className="banner" style={{height: this.state.height}} 
+      <div className={style.swiper} style={{height: this.state.height}}>
+        <ul className={style.banner} style={{height: this.state.height}} 
         onClick={this.handleClick} >
           {
             this.state.list.map((item,index) => (
@@ -109,16 +109,16 @@ export default class index extends Component {
             ))
           }
         </ul>
-        <ul className="circle" style={{width: this.state.width}}>
+        <ul className={style.circle} style={{width: this.state.width}}>
           {
             this.state.list.map((item, index) => (
               <li key={index} >
-                <span data-id={index} onClick={this.clickCircle}className={this.state.count === index ? 'checkCircle': ''}></span>
+                <span data-id={index} onClick={this.clickCircle} className={this.state.count === index ? style.checkCircle: ''}></span>
               </li>
             ))
           }
         </ul>
-        <div className="btn">
+        <div className={style.btn}>
           <div >
             <CaretLeftFilled onClick={this.clickBtnLeft} style={{fontSize: '100px', color: 'rgba(255,255,255,0.6)'}} />
           </div>
