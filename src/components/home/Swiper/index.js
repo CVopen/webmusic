@@ -2,11 +2,11 @@
  * @Author: xyh 
  * @Date: 2020-09-28 16:10:50 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-19 23:51:14
+ * @Last Modified time: 2020-10-20 00:11:51
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
-import {homeBanner} from '../../api/home/index'
+import {homeBanner} from '../../../api/home/index'
 import { CaretLeftFilled, CaretRightFilled } from '@ant-design/icons';
 export default class index extends Component {
 
