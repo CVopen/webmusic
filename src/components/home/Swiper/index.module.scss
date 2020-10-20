@@ -1,6 +1,21 @@
+.bgi{
+  background-size: 100% 100%;
+  transition: all 1.8s;
+  filter: blur(20px);
+}
+.box{
+  position: relative;
+}
+.topBanner{
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+  left: 50%;
+}
 .swiper {
   width: 1200px;
   position: relative;
+  
   margin: 0 auto;
 }
 .banner {
@@ -19,6 +34,7 @@
       width: 100%;
       height: 100%;
       cursor: pointer;
+      filter: blur(0);
     }
   }
 }

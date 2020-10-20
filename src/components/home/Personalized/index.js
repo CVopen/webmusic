@@ -1,7 +1,25 @@
 import React, { Component } from 'react'
 import style from './index.module.scss'
 import { DoubleRightOutlined } from '@ant-design/icons';
+import {homePersonalized} from '../../../api/home/index'
+import Item from '../../item/index'
 export default class Personalized extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      list: []
+    }
+  }
+
+  componentDidMount () {
+    homePersonalized({limit:12}).then(res => {
+      this.setState({
+        list: res.data.result
+      })
+    })
+  }
+
   render() {
     return (
       <div className={style.personalized}>
@@ -27,7 +45,17 @@ export default class Personalized extends Component {
           
           <div className={style.line}></div>
         </div>
-        <div className={style.item}>123</div>
+        <div className={style.items}>
+          {
+            this.state.list.map((item,index)=>(
+              
+              <Item 
+                key={item.id}
+                data={item}
+              />
+            ))
+          }
+        </div>
       </div>
     )
   }

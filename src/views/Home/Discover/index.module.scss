@@ -1,18 +1,19 @@
 .content {
   width: 100%;
-  min-width: 1200px;
+}
+.container{
+  width: 1200px;
+  margin: 0 auto;
 }
 .content_two{
   background-color: #fff;
-  width: 100%;
-  min-width: 1200px;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   border-left: 1px solid $background-color-hover;
   border-right: 1px solid $background-color-hover;
   .left{
-    flex: 2;
+    flex: 3;
     border-right: 1px solid $background-color-hover;
   }
   .right{

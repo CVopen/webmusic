@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:54:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-08 01:33:59
+ * @Last Modified time: 2020-10-20 19:58:40
  */
 
 import React from 'react';
@@ -29,7 +29,7 @@ class App extends React.Component {
         isShow: false
       })
       document.body.style.overflow = 'auto'
-    }, 3500);
+    }, 500);
   }
   componentDidMount () {
     this.setAnimation()

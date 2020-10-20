@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-30 22:53:44 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-20 00:06:20
+ * @Last Modified time: 2020-10-20 17:06:19
  */
 import request from '../../utils/request'
 
@@ -18,6 +18,14 @@ export function homeBanner (data) {
 export function homePersonalized (data) {
   return request({
     url: '/personalized',
+    method: 'get',
+    params: data
+  })
+}
+// 推荐电台
+export function homeDjprogram (data) {
+  return request({
+    url: '/personalized/djprogram',
     method: 'get',
     params: data
   })

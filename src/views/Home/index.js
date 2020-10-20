@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-26 14:55:49 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-20 00:16:19
+ * @Last Modified time: 2020-10-20 15:49:34
  */
 
 import React, { Component } from 'react'
@@ -15,7 +15,7 @@ export default class index extends Component {
     return (
       <div>
         <Headers {...this.props} />
-        <div className={style.content}>
+        
           <Switch>
             <RouterView routes={ this.props.routes }/>
           </Switch>
@@ -43,7 +43,6 @@ export default class index extends Component {
               })
             }
           </Switch> */}
-        </div>
       </div>
     )
   }
