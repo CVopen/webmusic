@@ -12,7 +12,6 @@ class Item extends Component {
 
   render() {
     const {data} = this.props
-    console.log(data);
     return (
       <div className={style.container}>
         <div className={style.container_items}>

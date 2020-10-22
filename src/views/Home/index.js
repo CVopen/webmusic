@@ -2,14 +2,14 @@
  * @Author: xyh 
  * @Date: 2020-09-26 14:55:49 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-20 15:49:34
+ * @Last Modified time: 2020-10-20 20:38:09
  */
 
 import React, { Component } from 'react'
 import Headers from '../../components/Header/index'
 import { Switch } from 'react-router-dom'
 import RouterView from '../../router/index'
-import style from  './index.module.scss'
+// import style from  './index.module.scss'
 export default class index extends Component {
   render() {
     return (

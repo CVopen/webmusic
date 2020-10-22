@@ -18,5 +18,39 @@
   }
   .right{
     flex: 1;
+    .loginInfo{
+      box-sizing: border-box;
+      padding: 20px;
+      height: 150px;
+      background-color: #ecf0f1;
+      // border-bottom: 1px solid $theme-color;
+      box-shadow: 0px 2px 5px $theme-color ;
+      .text{
+        span{
+          line-height: 20px;
+        }
+        .btn{
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          button{
+            width: 140px;
+            height: 30px;
+            border-radius: 10px; 
+            outline: none;
+            background: linear-gradient(120deg, #3498db, #2980b9, #5340a7);
+            color: #fff;
+            border: 1px solid skyblue;
+            background-size:300%;
+            cursor: pointer;
+            transition: all .3s;
+            &:hover{
+              background-position: right;
+            }
+          }
+        }
+      }
+    }
   }
 }

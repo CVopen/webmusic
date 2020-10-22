@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import style from './index.module.scss'
 import { DoubleRightOutlined } from '@ant-design/icons';
-import {homePersonalized} from '../../../api/home/index'
+import {homePersonalized, homePlaylistHot} from '../../../api/home/index'
 import Item from '../../item/index'
 export default class Personalized extends Component {
 
   constructor(props){
     super(props)
     this.state = {
-      list: []
+      list: [],
+      hotList: []
     }
   }
 
@@ -16,6 +17,11 @@ export default class Personalized extends Component {
     homePersonalized({limit:12}).then(res => {
       this.setState({
         list: res.data.result
+      })
+    })
+    homePlaylistHot().then(res => {
+      this.setState({
+        hotList: res.data.tags.slice(0,5)
       })
     })
   }
@@ -32,11 +38,11 @@ export default class Personalized extends Component {
               <span className={style.text}>热门推荐</span>
             </div>
             <ul>
-              <li><span>华语</span></li>
-              <li><span>流行</span></li>
-              <li><span>摇滚</span></li>
-              <li><span>民谣</span></li>
-              <li><span>电子</span></li>
+              {
+                this.state.hotList.map((item,index)=>(
+                  <li key={item.id}><span>{item.name}</span></li>
+                ))
+              }
             </ul>
             <div className={style.more}>
               更多<DoubleRightOutlined style={{fontSize: '14px', color: '#5340a7'}} />

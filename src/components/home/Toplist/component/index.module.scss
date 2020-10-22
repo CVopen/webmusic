@@ -1,0 +1,86 @@
+.top_item{
+  flex: 1;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #ccc;
+  .title{
+    // background-color: #fff;
+    padding-bottom: 12px;
+    display: flex;
+    .logo{
+      width: 100px;
+      height: 100px;
+      border-radius: 14px;
+      box-shadow: 2px 5px 5px #000;
+      cursor: pointer;
+    }
+    .right {
+      padding-left: 10px;
+      .text {
+        font-size: 16px;
+        height: 40px;
+        line-height: 40px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .2s;
+        &:hover{
+          text-decoration:underline;
+          font-weight: 600;
+        }
+      }
+      .icons{
+        span{
+          padding: 0 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .music_list{
+    box-sizing: border-box;
+    padding: 0 10px;
+    // & :nth-of-type(odd) {
+    //   background-color: #fff;
+    // }
+    .music{
+      display: flex;
+      align-items: center;
+      height: 36px;
+      font-size: 16px;
+      &:hover{
+        background-color: $theme-color;
+      }
+      &:hover .icons{
+        opacity: 1;
+      }
+      .num{
+        width: 30px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .name{
+        width: 100px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all .2s;
+        
+        overflow:hidden; //超出的文本隐藏
+        text-overflow:ellipsis; //溢出用省略号显示
+        white-space:nowrap; 
+        &:hover{
+          text-decoration:underline;
+          font-weight: 600;
+        }
+      }
+      .icons{
+        display: flex;
+        opacity: 0;
+        span{
+          margin: 0 5px;
+          cursor: pointer;
+        }
+      }
+    }
+    
+  }
+}

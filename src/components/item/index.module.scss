@@ -26,6 +26,7 @@
         overflow: hidden;
         display: flex;
         flex-direction: column-reverse;
+        cursor: pointer;
         &:hover{
           height: 178px;
         }
@@ -36,6 +37,7 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+          cursor: default;
           span{
             padding-left: 10px;
             color: #fff;
