@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-30 22:53:44 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-21 23:25:39
+ * @Last Modified time: 2020-10-22 19:45:49
  */
 import request from '../../utils/request'
 
@@ -51,6 +51,15 @@ export function topList (data) {
 export function topDetail (data) {
   return request({
     url: '/top/list',
+    method: 'get',
+    params: data
+  })
+}
+
+// 数字专辑-新碟上架
+export function albumList (data) {
+  return request({
+    url: '/album/list',
     method: 'get',
     params: data
   })

@@ -2,7 +2,7 @@
 
 感谢binaryify, 提供的接口很全，接口地址----[https://github.com/Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
-## 使用接口
+# 使用接口
 
 接口使用文档：[接口地址](https://neteasecloudmusicapi.vercel.app/#/)
 
@@ -27,6 +27,10 @@
 
 说明 : 调用此接口 , 传入榜单 id, 可获取不同排行榜数据
 也可使用歌单详情接口,传入排行榜id获取排行榜详情数据(排行榜也是歌单的一种)
+
+### 新碟上架
+
+说明 : 调用此接口 ,可获取数字专辑-新碟上架
 
 ### 登录
 

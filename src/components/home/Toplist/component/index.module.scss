@@ -6,6 +6,7 @@
   .title{
     // background-color: #fff;
     padding-bottom: 12px;
+    border-bottom: 1px solid $theme-color;
     display: flex;
     .logo{
       width: 100px;
@@ -47,7 +48,9 @@
       align-items: center;
       height: 36px;
       font-size: 16px;
+      transition: all .2s;
       &:hover{
+        color: #fff;
         background-color: $theme-color;
       }
       &:hover .icons{
@@ -81,6 +84,18 @@
         }
       }
     }
-    
+    .bottom_more{
+      border-top: 1px solid $theme-color;
+      height: 30px;
+      text-align: right;
+      font-size: 18px;
+      transition: all .2s;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover{
+        text-decoration:underline;
+        color: #fff;
+      }
+    }
   }
 }

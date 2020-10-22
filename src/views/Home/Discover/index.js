@@ -2,13 +2,14 @@
  * @Author: xyh 
  * @Date: 2020-09-28 19:21:40 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-22 17:06:06
+ * @Last Modified time: 2020-10-22 18:47:33
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
 import Swiper from '../../../components/home/Swiper'
 import Personalized from '../../../components/home/Personalized/index'
 import Toplist from '../../../components/home/Toplist'
+import Scroll from '../../../components/home/Scroll'
 
 export default class Discover extends Component {
 
@@ -32,8 +33,9 @@ export default class Discover extends Component {
                     <button>用户登录</button>
                   </div>
                 </div>
-                
               </div>
+              
+              <Scroll />
             </div>
           </div>
         </div>
