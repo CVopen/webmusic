@@ -6,17 +6,19 @@
     margin: 0 auto;
     .pic{
       width: 180px;
-      border: 1px solid $theme-color;
       position: relative;
       img{
         width: 178px;
         height: 178px;
+        border: 1px solid $theme-color;
+        border-radius: 14px;
         &:hover + .black{
           height: 178px;
         }
       }
       .black{
         position: absolute;
+        border-radius: 14px;
         left: 0;
         bottom: 0;
         width: 178px;

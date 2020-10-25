@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import style from './index.module.scss'
 import {YoutubeOutlined,PlayCircleOutlined} from '@ant-design/icons'
+import {computePlay} from '../../utils/format'
+import {getPlayDetail} from '../../api/home'
+
+// 事件总线
+import bus from '../../utils/bus'
+
 class Item extends Component {
 
-  computePlay = (num) => {
-    if(num > 100000) {
-      return `${num.toString().substring(0, num.toString().length - 4)}万`
-    }
-    return num
+  getDetail(data) {
+    console.log(data);
+    getPlayDetail({id: data.id}).then(res=>{
+      bus.emit('playMusic', {
+        musicList: res.data.playlist.tracks,
+        type: 'musicList',
+        id: data.id
+      })
+    })
   }
 
   render() {
@@ -21,9 +31,13 @@ class Item extends Component {
               <div className={style.play}>
                 <div className={style.left}>
                   <YoutubeOutlined/>
-                  <span>{this.computePlay(data.playCount)}</span>
+                  <span>{computePlay(data.playCount)}</span>
                 </div>
-                <div className={style.right}>
+                <div 
+                  title="播放" 
+                  className={style.right}
+                  onClick={()=>this.getDetail(data)}
+                >
                   <PlayCircleOutlined style={{color:'#333'}}/>
                 </div>
               </div>

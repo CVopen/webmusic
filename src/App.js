@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:54:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-20 19:58:40
+ * @Last Modified time: 2020-10-23 11:31:36
  */
 
 import React from 'react';
@@ -12,6 +12,7 @@ import RouterView from './router/index'
 import config from './router/config'
 import PageLoad from './components/PageLoad/PageLoad'
 // 引入redux
+import Audiocom from './components/Audiocom'
 import store from './store'
 import { Provider } from 'react-redux'
 import './App.scss'
@@ -41,6 +42,7 @@ class App extends React.Component {
         <Router>
             <RouterView routes={config }/>
         </Router>
+        <Audiocom/>
       </Provider>
     )
   }

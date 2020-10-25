@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-26 14:55:49 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-20 20:38:09
+ * @Last Modified time: 2020-10-22 23:20:18
  */
 
 import React, { Component } from 'react'
@@ -16,9 +16,9 @@ export default class index extends Component {
       <div>
         <Headers {...this.props} />
         
-          <Switch>
-            <RouterView routes={ this.props.routes }/>
-          </Switch>
+        <Switch>
+          <RouterView routes={ this.props.routes }/>
+        </Switch>
           {/* <Switch>
             {
               this.props.routes.map((item, i) => {

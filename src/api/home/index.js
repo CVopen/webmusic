@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-30 22:53:44 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-22 19:45:49
+ * @Last Modified time: 2020-10-25 14:32:37
  */
 import request from '../../utils/request'
 
@@ -60,6 +60,39 @@ export function topDetail (data) {
 export function albumList (data) {
   return request({
     url: '/album/list',
+    method: 'get',
+    params: data
+  })
+}
+// 获取专辑内容
+export function getAlbumMusic (data) {
+  return request({
+    url: '/album',
+    method: 'get',
+    params: data
+  })
+}
+// 获取歌单详情
+export function getPlayDetail (data) {
+  return request({
+    url: '/playlist/detail',
+    method: 'get',
+    params: data
+  })
+}
+
+// 音乐是否可用
+export function checkMusic (data) {
+  return request({
+    url: '/check/music',
+    method: 'get',
+    params: data
+  })
+}
+// 获取音乐url
+export function getSongUrl (data) {
+  return request({
+    url: '/song/url',
     method: 'get',
     params: data
   })

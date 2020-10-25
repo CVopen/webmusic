@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import style from './index.module.scss'
-import { DoubleRightOutlined } from '@ant-design/icons';
-import {albumList} from '../../../api/home'
+import { DoubleRightOutlined,PlayCircleOutlined  } from '@ant-design/icons';
+import {albumList, getAlbumMusic} from '../../../api/home'
+// 事件总线
+import bus from '../../../utils/bus'
 export default class Scroll extends Component {
 
   constructor(props) {
@@ -19,6 +21,16 @@ export default class Scroll extends Component {
       console.log(res)
       this.setState({
         albumList: [...res.data.products,...res.data.products]
+      })
+    })
+  }
+  playList = (list) => {
+    getAlbumMusic({id: list.albumId}).then(res=>{
+      // console.log(res.data.songs);
+      bus.emit('playMusic', {
+        scrollList: res.data.songs,
+        type: 'scrollList',
+        id: list.albumId
       })
     })
   }
@@ -46,8 +58,14 @@ export default class Scroll extends Component {
                   className={style.item}
                   key={index}
                 >
-                  <img src={item.coverUrl} alt=""/>
-              <div className={style.albumName}>《{item.albumName}》</div>
+                  <img title={item.albumName} src={item.coverUrl} alt=""/>
+                  <div 
+                    className={style.logo} 
+                    onClick={()=>{this.playList(item)}}
+                  >
+                    <PlayCircleOutlined />
+                  </div>
+                  <div className={style.albumName}>《{item.albumName}》</div>
                   <div className={style.name}>{item.artistName}</div>
                 </div>
               ))
