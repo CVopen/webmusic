@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import style from './index.module.scss'
-import {MenuUnfoldOutlined,StepForwardOutlined,StepBackwardOutlined ,FolderAddOutlined,DeleteOutlined,CloseOutlined, PlayCircleOutlined} from '@ant-design/icons'
+import {MenuUnfoldOutlined,StepForwardOutlined,StepBackwardOutlined ,FolderAddOutlined,DeleteOutlined,CloseOutlined, PlayCircleOutlined,YoutubeOutlined} from '@ant-design/icons'
 import { message } from 'antd';
 import {checkMusic, getSongUrl} from '../../api/home'
 
@@ -90,7 +90,7 @@ export default class index extends Component {
           this.setState({
             audioData: {
               img: data.al.picUrl,
-              name: data.al.name,
+              name: data.name,
               url: ''
             }
           },()=>{
@@ -127,6 +127,23 @@ export default class index extends Component {
       let count = this.state.index - 1
       count < 0 ? this.playMuisc(this.state.playList.length - 1): this.playMuisc(count) 
     }
+  }
+  // 清除列表
+  del = () => {
+    this.setState({
+      index: 0,
+      count:0 ,
+      playList: [],
+      musicList: [],
+      scrollList: [],
+      topList: [],
+      ownList: [],
+      audioData: {
+        img: 'http://s4.music.126.net/style/web2/img/default/default_album.jpg',
+        url: '',
+        name: '暂无音乐',
+      },
+    })
   }
   // 列表的动画控制
   showList = () => {
@@ -216,6 +233,7 @@ export default class index extends Component {
                 <div 
                   className={style.del} 
                   title="清除"
+                  onClick={this.del}
                 >
                   <DeleteOutlined />清除
                 </div>
@@ -257,8 +275,14 @@ export default class index extends Component {
                             </div>
                           </div>
                         </td>
-                        <td colSpan ="2" className={style.name}><p>
-                        {item.name}</p></td>
+                        <td colSpan ="2" className={style.name}>
+                          <p>
+                            {
+                              item.mv ? <YoutubeOutlined style={{color:"#fff",marginRight:'10px',current:'pointer'}} title="播放mv"/> : ''
+                            }
+                            {item.name}
+                          </p>
+                        </td>
                         <td><p>{formatDuration(item.dt)}</p></td>
                         <td><p>{item.ar[0].name}</p></td>
                         <td><p>{item.al.name}</p></td>

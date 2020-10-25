@@ -1,10 +1,25 @@
-本项目使用react 模仿网易云web端， 所用接口将会在下方展示。
+使用react 模仿网易云web端(虽说是模仿，但是本人觉得比原站更漂亮一些) 
+  虽然使用antd，但是只是使用了其中 Icon图标 Message提示 以及分页
 
-感谢binaryify, 提供的接口很全，接口地址----[https://github.com/Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+  花了很多时间写样式、动画 愿意练练css的小伙伴也能看看
+
+# 运行项目
+  - 请先下载接口代码，地址在下方
+  - 确保接口代码运行在3000端口
+  - git clone 本项目
+  - yarn
+  - yarn start即可启动项目
+
+
+感谢binaryify，接口地址----[https://github.com/Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
+所用接口将会在下方展示。
 
 # 使用接口
 
 接口使用文档：[接口地址](https://neteasecloudmusicapi.vercel.app/#/)
+
+大家可以复制名称到接口文档中查看详细接口说明
 
 ### banner
 
@@ -31,6 +46,22 @@
 ### 新碟上架
 
 说明 : 调用此接口 ,可获取数字专辑-新碟上架
+
+### 获取专辑内容
+
+说明 : 调用此接口 , 传入专辑 id, 可获得专辑内容
+
+### 获取歌单详情
+
+说明 : 歌单能看到歌单名字, 但看不到具体歌单内容 , 调用此接口 , 传入歌单 id, 可 以获取对应歌单内的所有的音乐(未登录状态只能获取不完整的歌单,登录后是完整的)，但是返回的trackIds是完整的，tracks 则是不完整的，可拿全部 trackIds 请求一次 song/detail 接口获取所有歌曲的详情
+
+### 音乐是否可用
+
+说明: 调用此接口,传入歌曲 id, 可获取音乐是否可用,返回 { success: true, message: 'ok' } 或者 { success: false, message: '亲爱的,暂无版权' }
+
+### 获取音乐 url
+
+说明 : 使用歌单详情接口后 , 能得到的音乐的 id, 但不能得到的音乐 url, 调用此接口, 传入的音乐 id( 可多个 , 用逗号隔开 ), 可以获取对应的音乐的 url,未登录状态返回试听片段(返回字段包含被截取的正常歌曲的开始时间和结束时间)
 
 ### 登录
 

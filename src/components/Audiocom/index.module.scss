@@ -218,6 +218,14 @@
             }
             
           }
+          tr{
+            transition: all .3s;
+            cursor: pointer;
+            &:hover{
+              background-color: $theme-color;
+              color: #fff;
+            }
+          }
           th{
             border-bottom: 1px solid $theme-color;
             box-shadow: 0px 2px 0px $theme-color;
