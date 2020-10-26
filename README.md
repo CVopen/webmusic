@@ -11,7 +11,7 @@
   - yarn start即可启动项目
 
 
-感谢binaryify，接口地址----[https://github.com/Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+感谢binaryify，----[接口地址](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
 所用接口将会在下方展示。
 

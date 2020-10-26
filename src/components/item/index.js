@@ -4,6 +4,9 @@ import {YoutubeOutlined,PlayCircleOutlined} from '@ant-design/icons'
 import {computePlay} from '../../utils/format'
 import {getPlayDetail} from '../../api/home'
 
+//图片懒加载
+import LazyLoad from 'react-lazyload';
+
 // 事件总线
 import bus from '../../utils/bus'
 
@@ -26,7 +29,9 @@ class Item extends Component {
       <div className={style.container}>
         <div className={style.container_items}>
           <div className={style.pic}>
-            <img src={data.picUrl}alt=""/>
+            <LazyLoad>
+              <img src={data.picUrl}alt=""/>
+            </LazyLoad>
             <div className={style.black}>
               <div className={style.play}>
                 <div className={style.left}>

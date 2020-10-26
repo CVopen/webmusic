@@ -2,12 +2,14 @@
  * @Author: xyh 
  * @Date: 2020-09-28 16:10:50 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-20 20:11:17
+ * @Last Modified time: 2020-10-26 22:47:13
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
 import {homeBanner} from '../../../api/home/index'
 import { CaretLeftFilled, CaretRightFilled } from '@ant-design/icons';
+//图片懒加载
+import LazyLoad from 'react-lazyload';
 export default class index extends Component {
 
   constructor(props) {
@@ -120,11 +122,13 @@ export default class index extends Component {
                       key={index}
                       style={{opacity: this.state.count === index?1:0, zIndex: this.state.count === index?1:0, height: this.state.height}}
                     >
-                      <img 
-                        src={item.imageUrl} 
-                        alt=""
-                        data-id={item.encodeId}
-                      />
+                      <LazyLoad>
+                        <img 
+                          src={item.imageUrl} 
+                          alt=""
+                          data-id={item.encodeId}
+                        />
+                      </LazyLoad>
                     </li>
                   ))
                 }
