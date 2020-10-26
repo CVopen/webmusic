@@ -7,10 +7,10 @@ export const computePlay = (num) => {
 
 export const formatDuration = (duration) => {
   // 转分
-  let min = Math.ceil(duration / 1000 / 60)
+  let min = parseInt(duration / 1000 / 60)
   min = min < 10 ? '0' + min : min
   // 秒
-  let sec = Math.ceil((duration / 1000) % 60)
+  let sec = parseInt((duration / 1000) % 60)
   sec = sec < 10 ? '0' + sec : sec
   return min + ':' + sec
 }

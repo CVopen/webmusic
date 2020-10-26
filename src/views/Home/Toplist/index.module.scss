@@ -1,0 +1,127 @@
+.content{
+  width: 1200px;
+  margin: 0 auto;
+  border-left: 1px solid $theme-color;
+  border-right: 1px solid $theme-color;
+  display: flex;
+  .left{
+    width: 300px;
+    box-sizing: border-box;
+    border-right: 1px solid $theme-color;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+  }
+  .right{
+    width: 900px;
+    box-sizing: border-box;
+    padding-top: 30px;
+    .top_title{
+      box-sizing: border-box;
+      padding: 0 30px 10px 30px;
+      .title{
+        display: flex;
+        .t_left{
+          margin-right: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #ccc;
+          height: 180px;
+          width: 180px;
+          img{
+            width: 170px;
+            height: 170px;
+            border: 1px solid #ccc;
+          }
+        }
+        .t_right{
+          box-sizing: border-box;
+          padding-top: 20px;
+          p{
+            font-size: 20px;
+            font-weight: 550;
+          }
+          button{
+            margin-right: 20px;
+            width: 140px;
+            height: 40px;
+            border-radius: 10px; 
+            outline: none;
+            background: linear-gradient(120deg, #3498db, #2980b9, #5340a7);
+            color: #fff;
+            border: 1px solid skyblue;
+            background-size:300%;
+            cursor: pointer;
+            transition: all .3s;
+            span{
+              margin-right: 10px;
+            }
+            &:hover{
+              background-position: right;
+            }
+          }
+        }
+      }
+      .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        .b_left{
+          span{
+            font-size: 20px;
+            font-weight: 550;
+            color: #000;
+            margin-right: 20px;
+          }
+          color: #999;
+          font-size: 14px;
+        }
+        .b_right{
+          font-size: 14px;
+          span{
+            color: $theme-color;
+          }
+        }
+      }
+      
+    }
+  }
+}
+
+.top_list{
+  width: 299px;
+  .list_title{
+    padding: 30px 0 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .list {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s;
+    &:hover{
+      background-color: #ccc;
+    }
+    img{
+      width: 40px;
+      height: 40px;
+      margin: 10px 0;
+    }
+    div{
+      display: flex;
+      flex-direction: column;
+      span{
+        margin-left: 20px;
+      }
+      .top_name{
+
+      }
+      .updated{
+        color: #999;
+      }
+    }
+  }
+}
