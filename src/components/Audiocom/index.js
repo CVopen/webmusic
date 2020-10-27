@@ -63,6 +63,14 @@ export default class index extends Component {
         result = true
       }
     })
+    if(str.type === 'ownList' && !result) {
+      // eslint-disable-next-line no-unused-expressions
+      this.state.playList.forEach(item => {
+        if(item.id=== str.ownList[0].id) {
+          result = true
+        }
+      })
+    }
     return result
   }
   // 获得音乐url
@@ -112,8 +120,6 @@ export default class index extends Component {
   }
   // 列表播放
   playMuisc = (index) => {
-    
-    // console.log();
     this.getUrl(this.state.playList[index])
   }
   // 上下首播放

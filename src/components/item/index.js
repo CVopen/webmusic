@@ -24,29 +24,33 @@ class Item extends Component {
   }
 
   render() {
-    const {data} = this.props
+    const {data,width} = this.props
     return (
-      <div className={style.container}>
+      <div 
+        className={style.container}
+        style={{width}}
+      >
         <div className={style.container_items}>
           <div className={style.pic}>
             <LazyLoad>
-              <img src={data.picUrl}alt=""/>
-            </LazyLoad>
-            <div className={style.black}>
-              <div className={style.play}>
-                <div className={style.left}>
-                  <YoutubeOutlined/>
-                  <span>{computePlay(data.playCount)}</span>
-                </div>
-                <div 
-                  title="播放" 
-                  className={style.right}
-                  onClick={()=>this.getDetail(data)}
-                >
-                  <PlayCircleOutlined style={{color:'#333'}}/>
+              <img src={data.picUrl ? data.picUrl : (data.coverImgUrl)}alt=""/>
+              <div className={style.black}>
+                <div className={style.play}>
+                  <div className={style.left}>
+                    <YoutubeOutlined/>
+                    <span>{computePlay(data.playCount)}</span>
+                  </div>
+                  <div 
+                    title="播放" 
+                    className={style.right}
+                    onClick={()=>this.getDetail(data)}
+                  >
+                    <PlayCircleOutlined style={{color:'#333'}}/>
+                  </div>
                 </div>
               </div>
-            </div>
+            </LazyLoad>
+            
           </div>
           <div className={style.text}>
             {data.name}

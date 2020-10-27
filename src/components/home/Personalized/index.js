@@ -58,6 +58,7 @@ export default class Personalized extends Component {
               <Item 
                 key={item.id}
                 data={item}
+                width={'25%'}
               />
             ))
           }
