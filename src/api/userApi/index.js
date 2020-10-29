@@ -1,8 +1,8 @@
 /*
  * @Author: xyh 
  * @Date: 2020-09-19 21:53:49 
- * @Last Modified by:   xyh 
- * @Last Modified time: 2020-09-19 21:53:49 
+ * @Last Modified by: xyh
+ * @Last Modified time: 2020-10-29 14:18:11
  */
 
 import request from '../../utils/request'
@@ -18,13 +18,20 @@ export function cellphone (data) {
   }
   // 邮箱登录
 export function emailLogin(data) {
-    return request({
-      url: '/login',
-      method: 'post',
-      data
-    })
-  }
-
+  return request({
+    url: '/login',
+    method: 'post',
+    data
+  })
+}
+  // 登陆状态
+export function status (data) {
+  return request({
+    url: '/login/status',
+    method: 'get',
+    data
+  })
+}
 
 // 刷新登录
 

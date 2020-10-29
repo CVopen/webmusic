@@ -21,12 +21,86 @@
     .loginInfo{
       box-sizing: border-box;
       padding: 20px;
-      height: 150px;
+      height: 200px;
       background-color: #ecf0f1;
       // border-bottom: 1px solid $theme-color;
       box-shadow: 0px 2px 5px $theme-color ;
       margin-bottom: 20px;
+      .user {
+          a {
+          cursor: pointer;
+          transition: all .2s;
+          &:hover {
+            color: $theme-color;
+            text-decoration: underline;
+          }
+        }
+        span {
+          cursor: pointer;
+          transition: all .2s;
+          &:hover {
+            color: $theme-color;
+            text-decoration: underline;
+          }
+        }
+        .user_info{
+          height: 90px;
+          display: flex;
+          margin-bottom: 20px;
+          .img{
+            background-color: #fff;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #999;
+            img {
+              margin: 5px;
+              width: 80px;
+              height: 80px;
+            }
+          }
+          .u_text{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+          button{
+            width: 140px;
+            height: 30px;
+            border-radius: 10px; 
+            outline: none;
+            background: linear-gradient(120deg, #3498db, #2980b9, #5340a7);
+            color: #fff;
+            border: 1px solid skyblue;
+            background-size:300%;
+            cursor: pointer;
+            transition: all .3s;
+            &:hover{
+              background-position: right;
+            }
+          }
+        }
+        .count{
+          height: 50px;
+          display: flex;
+          .count_info {
+            flex: 1;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            color: #999;
+            justify-content: center;
+          }
+          .middle{
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+          }
+        }
+      }
       .text{
+        margin-top: 20px;
         span{
           line-height: 20px;
         }

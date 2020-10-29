@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-28 16:10:50 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-29 11:33:56
+ * @Last Modified time: 2020-10-29 16:11:53
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
@@ -90,10 +90,12 @@ export default class index extends Component {
         list: data.banners,
         height: 1200 * img.height / img.width,
         width: data.banners.length * 40
+      },()=>{
+        
+        this.swiperAnimetion()
       })
     }
     
-    this.swiperAnimetion()
   }
   componentDidMount () {
     this.getBannerData()

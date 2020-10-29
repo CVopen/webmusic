@@ -2,10 +2,10 @@
  * @Author: xyh 
  * @Date: 2020-09-20 18:22:40 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-09-22 00:31:09
+ * @Last Modified time: 2020-10-29 22:44:27
  */
 const states = {
-  isPageShow: true
+  userInfo: {}
 }
 
 export default states

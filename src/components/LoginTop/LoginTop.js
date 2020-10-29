@@ -2,15 +2,15 @@
  * @Author: zmx 
  * @Date: 2020-09-27 09:33:22 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-29 11:08:36
+ * @Last Modified time: 2020-10-29 23:24:59
  */
 
 import React, { Component } from 'react'
 import './LoginTop.scss'
-import { cellphone } from '../../api/userApi/index'
+import { cellphone, status } from '../../api/userApi/index'
 import { MailOutlined } from '@ant-design/icons';
 import { withRouter }  from 'react-router-dom'
-import bus from '../../utils/bus'
+import { connect } from 'react-redux'
  class LoginTop extends Component {
     constructor(props){
         super(props)
@@ -51,22 +51,24 @@ import bus from '../../utils/bus'
     }
     clickHandler=()=>{
         if (this.state.username === '' || this.state.password === '') return
-        // 没有值就return了
         cellphone({
             phone:this.state.username,
             password:this.state.password
         }).then(res=>{
-          console.log(res.data);
+            console.log(res.data);
+            window.localStorage.setItem('token',res.data.token)
+            window.localStorage.setItem('userInfo',JSON.stringify(res.data))
+            window.localStorage.setItem('cookie',res.data.cookie)
             this.setState({
                 text: '登陆成功',
                 isShow: true
             }, ()=>{
+                    this.props.sendAction()
                     setTimeout(()=>{
                         this.setState({
                             isShow:false
                         })
                         this.props.history.push('/')
-                        bus.emit('location', true)
                     },1000)
                 }
             
@@ -139,6 +141,39 @@ import bus from '../../utils/bus'
     }
 }
 
+// const mapStateToProps = (state) => {
+//   return {
+//       subject_data: state.subject_data,
+//   }
+// }
 
 
-export default withRouter(LoginTop)
+// const mapDispatchToProps = (dispatch) => {
+
+//   return {
+      
+//       init_sub_data(resp_data){
+//           console.log(resp_data)
+          
+//               let action = {
+//                   type:'get_subject_data',
+//                   value:resp_data
+  
+//               }
+//               dispatch(action)
+//       }
+//   }
+// }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    sendAction: (data)=> {
+      dispatch({
+        type: 'set_userinfo',
+        value: data
+      })
+    }
+  }
+}
+
+export default connect(null,mapDispatchToProps)(withRouter(LoginTop))

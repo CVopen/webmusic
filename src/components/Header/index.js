@@ -2,13 +2,14 @@
  * @Author: xyh 
  * @Date: 2020-09-25 13:18:30 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-29 11:32:14
+ * @Last Modified time: 2020-10-30 00:20:20
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
 import { Row, Col } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
-export default class Header extends Component {
+import {connect} from 'react-redux'
+class Header extends Component {
   // constructor(props) {
   //   super(props)
   // }
@@ -24,7 +25,7 @@ export default class Header extends Component {
     this.props.history.push(`/index/${path}`)
   }
   render() {
- 
+    const {userInfo} = this.props
     return (
       <div className={style.headers}>
         <div className={style.header}>
@@ -66,7 +67,14 @@ export default class Header extends Component {
             </Col>
             <Col span={4}>
               <div className={style.avatar}>
-                <img src={require('../../assets/images/logo.svg')} alt=""/>
+                
+                {
+                  userInfo.profile ? (
+                    <img src={userInfo.profile.avatarUrl} alt=""/>
+                  ) : (
+                     <span>登 录</span>
+                  )
+                }
               </div>
             </Col>
           </Row>
@@ -75,3 +83,7 @@ export default class Header extends Component {
     )
   }
 }
+const mapStateToProps = state => {
+  return {userInfo: state.userInfo}
+}
+export default connect(mapStateToProps)(Header)
