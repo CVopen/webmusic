@@ -1,8 +1,8 @@
 /*
  * @Author: zmx 
  * @Date: 2020-09-27 09:33:22 
- * @Last Modified by: zmx
- * @Last Modified time: 2020-09-28 20:41:46
+ * @Last Modified by: xyh
+ * @Last Modified time: 2020-10-29 11:08:36
  */
 
 import React, { Component } from 'react'
@@ -10,6 +10,7 @@ import './LoginTop.scss'
 import { cellphone } from '../../api/userApi/index'
 import { MailOutlined } from '@ant-design/icons';
 import { withRouter }  from 'react-router-dom'
+import bus from '../../utils/bus'
  class LoginTop extends Component {
     constructor(props){
         super(props)
@@ -21,7 +22,17 @@ import { withRouter }  from 'react-router-dom'
             text: ''
         }
     }
-    
+    componentDidMount(){
+      window.document.onkeydown = (e) => {
+        if(e.keyCode === 13){
+          console.log(e.keyCode);
+          this.clickHandler()
+        }
+      }
+    }
+    componentWillUnmount(){
+      window.document.onkeydown = null
+    }
     change = (e) => {
         switch (e.target.dataset.input) {
             case "user":
@@ -45,6 +56,7 @@ import { withRouter }  from 'react-router-dom'
             phone:this.state.username,
             password:this.state.password
         }).then(res=>{
+          console.log(res.data);
             this.setState({
                 text: '登陆成功',
                 isShow: true
@@ -54,7 +66,8 @@ import { withRouter }  from 'react-router-dom'
                             isShow:false
                         })
                         this.props.history.push('/')
-                    },2000)
+                        bus.emit('location', true)
+                    },1000)
                 }
             
             )

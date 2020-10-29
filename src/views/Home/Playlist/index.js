@@ -116,7 +116,7 @@ export default class index extends Component {
           left: 130, 
         }
       }, ()=>{
-        this.props.history.push(`/index/playlist?${this.state.order?'order=hot&':''}cat=${data.name}`)
+        this.props.history.push(`/index/playlist?${this.state.order?`order=${this.state.order}&`:''}cat=${data.name}`)
         this.getPlayList()
       })
       return 
@@ -209,7 +209,7 @@ export default class index extends Component {
             
           </div>
         </div>
-        <div className={style.container}>
+        <div className={style.container} style={{height: this.state.playList.length <15?687:''}}>
           {
             this.state.playList.map(item => (
               <Item 

@@ -20,7 +20,7 @@ export default class index extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     
     this.getTopList()
   }
@@ -31,7 +31,7 @@ export default class index extends Component {
       topList: data.list
     },()=>{
       const id = this.props.history.location.search.replace(/[^0-9]/ig,"")
-      console.log(id);
+      // console.log(id);
       if(id){
         this.setState({
           index: id
@@ -43,7 +43,7 @@ export default class index extends Component {
         })
       }
     })
-    console.log(this.state.index);
+    // console.log(this.state.index);
     this.getTopListDetail(this.state.index)
   }
   // 获取榜单数据
@@ -58,7 +58,7 @@ export default class index extends Component {
           })
         }
       })
-      console.log(this.state);
+      // console.log(this.state);
     })
   }
 

@@ -1,0 +1,40 @@
+.container{
+  width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 30px;
+  border-left: 1px solid $theme-color;
+  border-right: 1px solid $theme-color;
+  background-color: #fff;
+  .logos{
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    .logo_item{
+      display: flex;
+      width: 112px;
+      height: 112px;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transition: all .2s;
+      cursor: pointer;
+      &:hover{
+        background-color: #ccc;
+      }
+      img{
+        width: 56px;
+        height: 56px;
+      }
+      span{
+        color: #666;
+      }
+    }
+  }
+  .programList{
+    display: flex;
+    justify-content: space-between;
+  }
+}

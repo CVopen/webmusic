@@ -1,0 +1,91 @@
+.container{
+  width: 550px;
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    .t_left{
+      font-size: 20px;
+      font-weight: 550;
+    }
+    .t_right{
+      color: #555;
+    }
+    span{
+      transition: all .3s;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+        color: $theme-color;
+      }
+    }
+  }
+  .content{
+    border: 1px solid #ccc;
+    border-top: 2px solid $theme-color;
+    .item{
+      box-sizing: border-box;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+      &:hover{
+        background-color: #ccc;
+      }
+      img{
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      div{
+        width: 380px;
+        box-sizing: border-box;
+        padding: 0 15px;
+        p{
+          width: 350px;
+          margin: 0;
+          overflow:hidden; //超出的文本隐藏
+          text-overflow:ellipsis; //溢出用省略号显示
+          white-space:nowrap; 
+          cursor: pointer;
+          transition: all .2s;
+          &:hover{
+            text-decoration: underline;
+            color: $theme-color;
+          }
+        }
+        span{ 
+          width: 350px;
+          color: #555;
+          overflow:hidden; //超出的文本隐藏
+          text-overflow:ellipsis; //溢出用省略号显示
+          white-space:nowrap; 
+          cursor: pointer;
+          transition: all .2s;
+          &:hover{
+            text-decoration: underline;
+            color: $theme-color;
+          }
+        }
+      }
+      .tag {
+        display: inline-block;
+        border: 1px solid #ccc;
+        width: 80px;
+        height: 25px;
+        text-align: center;
+        line-height: 23px;
+        color: #555;
+        cursor: pointer;
+        transition: all .2s;
+        &:hover{
+          border: 1px solid $theme-color;
+          color: $theme-color;
+        }
+      }
+    }
+  }
+
+}

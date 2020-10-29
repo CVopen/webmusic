@@ -5,6 +5,7 @@
     background-image: linear-gradient(to right,#ff9569 0%,#e92758 100%);
     display: flex;
     flex-direction: column;
+    z-index: 1000;
     // justify-content: center;
     align-items: center;
     .logo {

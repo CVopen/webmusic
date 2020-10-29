@@ -44,7 +44,7 @@ export default class Personalized extends Component {
                 ))
               }
             </ul>
-            <div className={style.more}>
+            <div className={style.more} onClick={()=>this.props.history.push('/index/playlist')}>
               更多<DoubleRightOutlined style={{fontSize: '14px', color: '#5340a7'}} />
             </div>
           </div>

@@ -92,10 +92,12 @@
       font-size: 18px;
       transition: all .2s;
       font-weight: 600;
-      cursor: pointer;
       &:hover{
         text-decoration:underline;
         color: #fff;
+      }
+      span{
+        cursor: pointer;
       }
     }
   }

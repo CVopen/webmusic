@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-28 16:10:50 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-26 22:47:13
+ * @Last Modified time: 2020-10-29 11:33:56
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
@@ -39,7 +39,7 @@ export default class index extends Component {
     }, 3500)
   }
   changeBack = () =>{
-    this.background.current.style.backgroundImage = `url('${this.state.list[this.count].imageUrl}')`
+    this.background.current.style.backgroundImage = `url('${this.state.list[this.state.count].imageUrl}')`
   }
   handleClick = (e) => {
     console.log(e.target.dataset);

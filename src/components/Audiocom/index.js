@@ -40,6 +40,13 @@ export default class index extends Component {
 
   componentDidMount () {
     // 接收值
+    bus.on('location',(data) => {
+      if(this.state.playList.length > 0) {
+
+        data ? this.audioRef.current.play() : this.audioRef.current.pause()
+      }
+      
+    })
     bus.on('playMusic', (data)=>{
       this.getUrl(data[data.type][0])
       if(!this.isTure(data)) {
@@ -53,6 +60,9 @@ export default class index extends Component {
     this.audioRef.current.onended = () =>{
       this.playMuiscBtn(1)
     }
+    // this.audioRef.current.addEventListener('timeupdate',(e)=>{
+    //   console.log(this.audioRef.current.currentTime);
+    // },false)
   }
   
   // 判断歌单是否存在 避免key渲染问题
@@ -79,9 +89,9 @@ export default class index extends Component {
     checkMusic({id: data.id})
       .then(res=>{
         getSongUrl({id:data.id}).then(result => {
-          console.log(result.data.data[0].url);
+          // console.log(result.data.data[0].url);
           if(!result.data.data[0].url)  message.info('亲爱的,暂无音源')
-          console.log(this.state.playList.length);
+          // console.log(this.state.playList.length);
           this.setState({
             audioData: {
               img: data.al.picUrl,
@@ -109,7 +119,7 @@ export default class index extends Component {
   }
   // 获取当前播放歌曲索引
   getIndex = () => {
-    console.log(this.state.playList);
+    // console.log(this.state.playList);
     this.state.playList.forEach((item, index) => {
       if(item.name === this.state.audioData.name){
         this.setState({

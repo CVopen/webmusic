@@ -22,6 +22,9 @@ export default class Topitem extends Component {
       id: item.id
     })
   }
+  toTop =(id) => {
+    this.props.history.push(`/index/toplist?id=${id}`)
+  }
   render() {
     const {topList,musicList} = this.props
     // const track = musicList.tracks.slice(0,10)
@@ -63,7 +66,7 @@ export default class Topitem extends Component {
           }
           
           <div className={style.bottom_more}>
-            查看全部<DoubleRightOutlined />
+            <span onClick={()=>this.toTop(topList.id)}>查看全部<DoubleRightOutlined /></span>
           </div>
           
         </div>

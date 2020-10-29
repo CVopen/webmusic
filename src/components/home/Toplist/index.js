@@ -34,6 +34,9 @@ export default class Toplist extends Component {
       })
     })
   }
+  toTop =() => {
+    this.props.history.push('/index/toplist')
+  }
   render() {
     return (
       <div className={style.toplist}>
@@ -44,7 +47,7 @@ export default class Toplist extends Component {
             </span>
             <span className={style.text}>榜单</span>
           </div>
-          <div className={style.more}>
+          <div className={style.more} onClick={this.toTop}>
             更多<DoubleRightOutlined style={{fontSize: '14px', color: '#5340a7'}} />
           </div>
         </div>
@@ -57,6 +60,7 @@ export default class Toplist extends Component {
                 key={item.id} 
                 topList={item} 
                 musicList={this.state.musicList[index]} 
+                {...this.props}
               />
             ))
           }

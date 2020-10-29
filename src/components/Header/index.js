@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-25 13:18:30 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-26 00:00:29
+ * @Last Modified time: 2020-10-29 11:32:14
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
@@ -20,6 +20,7 @@ export default class Header extends Component {
   }
   toPath = (e) => {
     const path = e.target.dataset.path
+    console.log(path);
     this.props.history.push(`/index/${path}`)
   }
   render() {
