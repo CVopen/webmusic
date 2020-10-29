@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-28 16:10:50 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-29 16:11:53
+ * @Last Modified time: 2020-10-30 00:45:48
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
@@ -31,9 +31,11 @@ export default class index extends Component {
       if (this.count >= this.state.list.length) {
         this.count = 0
       }
-      this.changeBack()
+      
       this.setState({
         count: this.count
+      },()=>{
+        this.changeBack()
       })
       
     }, 3500)
@@ -49,8 +51,10 @@ export default class index extends Component {
     this.count = e.target.dataset.id - 0
     this.setState({
       count: e.target.dataset.id - 0
+    },()=>{
+      this.changeBack()
     })
-    this.changeBack()
+    
     
     clearInterval(this.timer)
     this.swiperAnimetion()
@@ -62,8 +66,10 @@ export default class index extends Component {
     }
     this.setState({
       count: this.count
+    },()=>{
+
+      this.changeBack()
     })
-    this.changeBack()
     clearInterval(this.timer)
     this.swiperAnimetion()
   }
@@ -74,8 +80,10 @@ export default class index extends Component {
     }
     this.setState({
       count: this.count
+    },()=>{
+
+      this.changeBack()
     })
-    this.changeBack()
     clearInterval(this.timer)
     this.swiperAnimetion()
   }

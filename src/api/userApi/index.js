@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:53:49 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-29 14:18:11
+ * @Last Modified time: 2020-10-30 00:37:52
  */
 
 import request from '../../utils/request'
@@ -32,7 +32,14 @@ export function status (data) {
     data
   })
 }
-
+// 退出登录
+export function logout (data) {
+  return request({
+    url: '/logout',
+    method: 'post',
+    data
+  })
+}
 // 刷新登录
 
 // 发送验证码

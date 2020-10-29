@@ -2,7 +2,7 @@
  * @Author: zmx 
  * @Date: 2020-09-27 09:33:22 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-29 23:24:59
+ * @Last Modified time: 2020-10-30 01:03:48
  */
 
 import React, { Component } from 'react'
@@ -59,17 +59,17 @@ import { connect } from 'react-redux'
             window.localStorage.setItem('token',res.data.token)
             window.localStorage.setItem('userInfo',JSON.stringify(res.data))
             window.localStorage.setItem('cookie',res.data.cookie)
+            this.props.sendAction(res.data)
             this.setState({
                 text: '登陆成功',
                 isShow: true
             }, ()=>{
-                    this.props.sendAction()
                     setTimeout(()=>{
                         this.setState({
                             isShow:false
                         })
                         this.props.history.push('/')
-                    },1000)
+                    },2000)
                 }
             
             )

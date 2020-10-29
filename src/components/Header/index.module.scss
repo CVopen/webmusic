@@ -39,11 +39,35 @@
       width: 80px;
       height: 80px;
       margin: 0 auto;
+      &:hover ul {
+        height: 40px;
+      }
       img {
         width: 50px;
         cursor: pointer;
         height: 50px;
         border-radius: 50%;
+        
+      }
+      ul{
+        transition: all .3s;
+        overflow: hidden;
+        height: 0;
+        background-color: #2e86de;
+        width: 120px;
+        li{
+          text-align: center;
+          list-style: none;
+          width: 120px;
+          height: 40px;
+          line-height: 40px;
+          cursor: pointer;
+          transition: all .3s;
+          &:hover {
+            color: $color-hover;
+            background-color: $theme-color;
+          }
+        }
       }
       span{
         cursor: pointer;

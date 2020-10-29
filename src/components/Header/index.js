@@ -2,13 +2,14 @@
  * @Author: xyh 
  * @Date: 2020-09-25 13:18:30 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-30 00:20:20
+ * @Last Modified time: 2020-10-30 01:02:15
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
 import { Row, Col } from 'antd'
 import { SearchOutlined } from '@ant-design/icons';
 import {connect} from 'react-redux'
+import {logout} from '../../api/userApi'
 class Header extends Component {
   // constructor(props) {
   //   super(props)
@@ -23,6 +24,19 @@ class Header extends Component {
     const path = e.target.dataset.path
     console.log(path);
     this.props.history.push(`/index/${path}`)
+  }
+  // 退出登录
+  loginOut = () => {
+    
+    logout().then(res=>{
+      this.props.sendAction()
+      window.localStorage.removeItem('userInfo')
+      window.localStorage.removeItem('token')
+      window.localStorage.removeItem('cookie')
+    })
+  }
+  toLogin = () => {
+    this.props.history.push('/login')
   }
   render() {
     const {userInfo} = this.props
@@ -69,10 +83,16 @@ class Header extends Component {
               <div className={style.avatar}>
                 
                 {
-                  userInfo.profile ? (
-                    <img src={userInfo.profile.avatarUrl} alt=""/>
+                  userInfo.profile === undefined ? (
+                    <span onClick={this.toLogin}>登 录</span>
+                    
                   ) : (
-                     <span>登 录</span>
+                    <>
+                      <img src={userInfo.profile.avatarUrl} alt=""/>
+                      <ul>
+                        <li onClick={this.loginOut}>退出登录</li>
+                      </ul>
+                    </>
                   )
                 }
               </div>
@@ -86,4 +106,14 @@ class Header extends Component {
 const mapStateToProps = state => {
   return {userInfo: state.userInfo}
 }
-export default connect(mapStateToProps)(Header)
+const mapDispatchToProps = dispatch => {
+  return {
+    sendAction: ()=> {
+      dispatch({
+        type: 'set_userinfo',
+        value: {}
+      })
+    }
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Header)
