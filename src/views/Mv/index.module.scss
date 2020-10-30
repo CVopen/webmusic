@@ -1,0 +1,147 @@
+.mv {
+  width: 1200px;
+  margin: 0 auto;
+  border-left: 1px solid $theme-color;
+  border-right: 1px solid $theme-color;
+  display: flex;
+  background-color: #fff;
+  .left{
+    flex: 2;
+    border-right: 1px solid $theme-color;
+    .text{
+      margin-top: 20px;
+      margin-left: 20px;
+      font-size: 16px;
+    }
+    .video{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      video{
+        margin: 30px 0;
+        width: 720px;
+      }
+    }
+    .info {
+      width: 720px;
+      margin: 0 auto;
+      .img{
+        display: flex;
+        color: 14px;
+        align-items: center;
+        margin-bottom: 20px;
+        img{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+      }
+      .title{
+        margin-bottom: 20px;
+        .t_name{
+          font-size: 22px;
+        }
+        .t_info {
+          span {
+            margin-right: 20px;
+            color: #333;
+            font-size: 14px;
+          }
+        }
+      }
+      .text_mv{
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+    }
+    .hot {
+      width: 720px;
+      margin: 0 auto;
+      .title {
+        font-size: 22px;
+      }
+      .item {
+        display: flex;
+        margin: 20px 0;
+        img{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+        .name {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .top{
+            color: #4e9797;
+          }
+          .bottom {
+            color: #ccc;
+          }
+        }
+        span{
+          color: #333;
+          overflow:hidden; //超出的文本隐藏
+        text-overflow:ellipsis; //溢出用省略号显示
+        white-space:nowrap; 
+        margin: 0;
+        }
+      }
+    }
+  }
+  .right{
+    flex: 1;
+    .text{
+      margin: 20px 0 20px 20px;
+    }
+    .item{
+      width: calc(100% - 40px);
+      margin: 0 20px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: all .3s;
+      border-radius: 10px;
+      &:hover{
+        background-color: #ccc;
+      }
+      .img{
+        margin: 10px 0;
+        margin-left: 10px;
+        position: relative;
+        span{
+          color: #fff;
+        }
+        .play_count{
+          position: absolute;
+          top: 0;
+          right: 5px;
+        }
+        .play_time{
+          position: absolute;
+          right: 5px;
+          bottom: 0;
+        }
+        img{
+          width:180px;
+          border-radius: 10px;
+        }
+      }
+      .title{
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding-left: 10px;
+        .name_mv{
+          color: #555;
+        }
+        .name {
+          color: #888888;
+        }
+      }
+    }
+  }
+}

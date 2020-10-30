@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-19 21:54:16 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-29 23:35:11
+ * @Last Modified time: 2020-10-30 23:01:53
  */
 
 import React from 'react';
@@ -29,12 +29,11 @@ class View extends React.Component {
         isShow: false
       })
       document.body.style.overflow = 'auto'
-    }, 500);
+    }, 5000);
   }
   componentDidMount () {
     this.setAnimation()
     this.isLogin()
-    console.log(123);
   }
   // 判断当前是否登录
   isLogin = () => {
@@ -47,7 +46,7 @@ class View extends React.Component {
   render () {
     return (
       <>
-        {/* {this.state.isShow ? (<PageLoad />) : null} */}
+        {this.state.isShow ? (<PageLoad />) : null}
         <Router>
             <RouterView routes={config }/>
         </Router>

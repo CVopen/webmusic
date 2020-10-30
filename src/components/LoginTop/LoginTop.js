@@ -2,7 +2,7 @@
  * @Author: zmx 
  * @Date: 2020-09-27 09:33:22 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-30 01:07:00
+ * @Last Modified time: 2020-10-30 14:22:04
  */
 
 import React, { Component } from 'react'
@@ -11,6 +11,7 @@ import { cellphone } from '../../api/userApi/index'
 import { MailOutlined } from '@ant-design/icons';
 import { withRouter }  from 'react-router-dom'
 import { connect } from 'react-redux'
+import bus from '../../utils/bus'
  class LoginTop extends Component {
     constructor(props){
         super(props)
@@ -29,6 +30,8 @@ import { connect } from 'react-redux'
           this.clickHandler()
         }
       }
+
+      bus.emit('location')
     }
     componentWillUnmount(){
       window.document.onkeydown = null

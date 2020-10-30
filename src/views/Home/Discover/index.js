@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-28 19:21:40 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-30 10:52:59
+ * @Last Modified time: 2020-10-30 15:28:52
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
@@ -11,10 +11,16 @@ import Personalized from '../../../components/home/Personalized/index'
 import Toplist from '../../../components/home/Toplist'
 import Scroll from '../../../components/home/Scroll'
 import {connect} from 'react-redux'
+import bus from '../../../utils/bus'
 class Discover extends Component {
 
   toLogin = () => {
     this.props.history.push('/login')
+  }
+  componentDidMount () {
+    
+    bus.emit('location',true)
+    bus.emit('isShow', true)
   }
   render() {
     const { userInfo } =this.props

@@ -31,7 +31,7 @@ export default class index extends Component {
         url: '',
         name: '暂无音乐',
       },
-      
+      isShowHeight: true,
       index: 0
     }
 
@@ -47,9 +47,25 @@ export default class index extends Component {
       }
       
     })
+    bus.on('isShow', data => {
+      !data && this.audioRef.current.pause()
+      // console.log(data);
+      this.setState({
+        isShowHeight: data
+      })
+    })
     bus.on('playMusic', (data)=>{
       this.getUrl(data[data.type][0])
       if(!this.isTure(data)) {
+        if(!(data.type === 'ownList')){
+          data[data.type].forEach((item,index)=>{
+            this.state.playList.forEach( i =>{
+              if(item.id.toString() === i.id.toString()){
+                data[data.type].splice(index, 1)
+              }
+            })
+          })
+        }
         this.setState({
           playList: [...this.state.playList,...data[data.type]],
           count: this.state.count + data[data.type].length,
@@ -68,6 +84,7 @@ export default class index extends Component {
   // 判断歌单是否存在 避免key渲染问题
   isTure = (str) => {
     let result = false
+    // console.log(str);
     this.state[str.type].forEach(item => {
       if(item === str.id) {
         result = true
@@ -81,6 +98,7 @@ export default class index extends Component {
         }
       })
     }
+    
     return result
   }
   // 获得音乐url
@@ -187,7 +205,15 @@ export default class index extends Component {
   render() {
     const { playList, count, audioData } = this.state
     return (
-      <div className={style.player}>
+      <div 
+        className={style.player} 
+        style={
+          this.state.isShowHeight? {} : {
+            height: 0,
+            overflow: 'hidden',
+          }
+        }
+      >
         <div className={style.player_content}>
           <div className={style.player_audio}>
             <audio 
@@ -294,7 +320,10 @@ export default class index extends Component {
                         <td colSpan ="2" className={style.name}>
                           <p>
                             {
-                              item.mv ? <YoutubeOutlined style={{color:"#fff",marginRight:'10px',current:'pointer'}} title="播放mv"/> : ''
+                              item.mv ? <a href={`#/mv?id=${item.mv}`}><YoutubeOutlined 
+                                  style={{color:"#fff",marginRight:'10px',current:'pointer'}} 
+                                  title="播放mv"
+                                /></a> : ''
                             }
                             {item.name}
                           </p>

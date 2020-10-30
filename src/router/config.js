@@ -6,7 +6,7 @@
  * @Last Modified by: zmx
  * @Last Modified time: 2020-09-27 14:42:13
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-08 01:07:24
+ * @Last Modified time: 2020-10-30 11:29:54
  */
 // 首页路由
 import Home from '../views/Home/index'
@@ -22,6 +22,8 @@ import Nofound from '../views/Nofound/index'
 import Login from '../views/Login/index'
 import EmailLoginPar from '../views/EmailLogin/index'
 
+// mv
+import Mv from '../views/Mv'
 
 const routes = [ 
   // {
@@ -35,6 +37,10 @@ const routes = [
   {
     path:'/emailLogin',
     component:EmailLoginPar,
+  },
+  {
+    path:'/mv',
+    component:Mv,
   },
   {
     path: '/index',

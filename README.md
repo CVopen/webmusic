@@ -1,7 +1,11 @@
-使用react 模仿网易云web端(虽说是模仿，但是本人觉得比原站更漂亮一些) 
-  虽然使用antd，但是只是使用了其中 Icon图标 Message提示 以及分页
+本项目使用react+react-router-dom + react-redux + antd模仿网易云音乐web端
 
-  花了很多时间写样式、动画 愿意练练css的小伙伴也能看看
+  antd 使用了 Icon图标 Message提示 以及分页组件，
+  大量动画均为自己所写。
+  首页轮播滚动等也都是自己完成。
+  音频播放兄弟组件传参使用events完成
+
+本想尽量做全一点，因为时间就到此为止，作为一个练习项目而言，也是比较可以的了。
 
 # 运行项目
   - 请先下载接口代码，地址在下方
@@ -13,7 +17,35 @@
 
 感谢binaryify，----[接口地址](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
-所用接口将会在下方展示。
+
+# 展示
+首屏加载动画页面
+![avatar](img/back.png)
+
+主页
+![avatar](img/home1.png)
+![avatar](img/home2.png)
+![avatar](img/home3.png)
+
+排行榜
+![avatar](img/toplist.png)
+
+歌单
+![avatar](img/playlist.png)
+
+主播电台
+![avatar](img/djradio.png)
+
+登录页面
+![avatar](img/login.png)
+
+mv
+![avatar](img/mv.png)
+
+整体gif展示
+![avatar](img/tutieshi_640x323_20s.gif)
+
+所用部分接口将会在下方展示。
 
 # 使用接口
 

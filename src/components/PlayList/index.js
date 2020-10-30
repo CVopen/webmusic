@@ -54,7 +54,7 @@ class index extends Component {
                         <td colSpan ="2" className={style.name}>
                           <p>
                             {
-                              item.mv ? <YoutubeOutlined style={{color:"hotpink",marginRight:'10px',current:'pointer'}} title="播放mv"/> : ''
+                              item.mv ? <a href={`#/mv?id=${item.mv}`}><YoutubeOutlined style={{color:"hotpink",marginRight:'10px',current:'pointer'}} title="播放mv"/></a> : ''
                             }
                             {item.name}
                           </p>

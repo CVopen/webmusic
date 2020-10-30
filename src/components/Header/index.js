@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-25 13:18:30 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-30 01:02:15
+ * @Last Modified time: 2020-10-30 19:24:35
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
@@ -23,7 +23,11 @@ class Header extends Component {
   toPath = (e) => {
     const path = e.target.dataset.path
     console.log(path);
-    this.props.history.push(`/index/${path}`)
+    if(path === 'mv') {
+      this.props.history.push(`/${path}`)
+    } else {
+      this.props.history.push(`/index/${path}`)
+    }
   }
   // 退出登录
   loginOut = () => {
@@ -61,6 +65,7 @@ class Header extends Component {
                   <li data-path="djradio">主播电台</li>
                   <li data-path="artist">歌手</li>
                   <li data-path="album">新碟上架</li>
+                  {/* <li data-path="mv">mv</li> */}
                 </ul>
               </div>
             </Col>
