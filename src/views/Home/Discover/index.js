@@ -2,7 +2,7 @@
  * @Author: xyh 
  * @Date: 2020-09-28 19:21:40 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-30 00:48:26
+ * @Last Modified time: 2020-10-30 10:52:59
  */
 import React, { Component } from 'react'
 import style from './index.module.scss'
@@ -50,7 +50,7 @@ class Discover extends Component {
 
                         </div>
                         <div className={style.u_text}>
-                          <a style={{color: '#000',fontSize:'16px',fontWeight:550}} href="/me">{userInfo.profile.nickname}</a>
+                          <a style={{color: '#000',fontSize:'16px',fontWeight:550}} href="#/me">{userInfo.profile.nickname}</a>
                           <a style={{color: '#ccc',fontSize:'16px',fontWeight:500}} href="/">等级:0</a>
                           <button >签到</button>
                         </div>

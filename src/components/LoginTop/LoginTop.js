@@ -2,12 +2,12 @@
  * @Author: zmx 
  * @Date: 2020-09-27 09:33:22 
  * @Last Modified by: xyh
- * @Last Modified time: 2020-10-30 01:03:48
+ * @Last Modified time: 2020-10-30 01:07:00
  */
 
 import React, { Component } from 'react'
 import './LoginTop.scss'
-import { cellphone, status } from '../../api/userApi/index'
+import { cellphone } from '../../api/userApi/index'
 import { MailOutlined } from '@ant-design/icons';
 import { withRouter }  from 'react-router-dom'
 import { connect } from 'react-redux'

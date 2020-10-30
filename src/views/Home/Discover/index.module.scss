@@ -30,6 +30,10 @@
           a {
           cursor: pointer;
           transition: all .2s;
+          width: 150px;
+          overflow:hidden; //超出的文本隐藏
+          text-overflow:ellipsis; //溢出用省略号显示
+          white-space:nowrap; 
           &:hover {
             color: $theme-color;
             text-decoration: underline;
