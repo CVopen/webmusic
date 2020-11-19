@@ -266,7 +266,7 @@ export default class index extends Component {
           >
             <div className={style.title}>
               <div className={style.left_t}>
-                播放列表(0)
+                播放列表({count})
               </div>
               <div className={style.right_t}>
                 <div className={style.all} title="收藏">
