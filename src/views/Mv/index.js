@@ -69,7 +69,7 @@ class index extends Component {
     })
   }
   toMv =(id) => {
-
+    console.log(this.props);
     this.props.history.push(`/mv?id=${id}`)
     this.getMvById(id)
   }

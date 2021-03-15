@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 // 引入antd样式
 import 'antd/dist/antd.css'
-
+// GLOBAL.XMLHttpRequest = GLOBAL.originalXMLHttpRequest || GLOBAL.XMLHttpRequest
 ReactDOM.render(
     <App />,
   document.getElementById('root')
